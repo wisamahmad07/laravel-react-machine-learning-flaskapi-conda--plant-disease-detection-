@@ -1,7 +1,11 @@
-import React from "react";
+import { Button } from "@chakra-ui/react";
 
 const Wisam = () => {
-    return <div>Wisam</div>;
+    return (
+        <>
+            <Button colorScheme="green">Wisam</Button>
+        </>
+    );
 };
 
 export default Wisam;
