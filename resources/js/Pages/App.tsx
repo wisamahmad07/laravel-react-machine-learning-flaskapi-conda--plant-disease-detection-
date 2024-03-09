@@ -1,6 +1,7 @@
-import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
+import NavBar from "@/MyComponents/NavBar";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 
-const Wisam = () => {
+const App = () => {
     return (
         <>
             <Grid
@@ -9,8 +10,8 @@ const Wisam = () => {
                     lg: `"nav nav" "sidebar main"`,
                 }}
             >
-                <GridItem area="nav" bg="green">
-                    navbar
+                <GridItem area="nav">
+                    <NavBar />
                 </GridItem>
                 <Show above="lg">
                     <GridItem area="sidebar" bg="red">
@@ -26,4 +27,4 @@ const Wisam = () => {
     );
 };
 
-export default Wisam;
+export default App;
