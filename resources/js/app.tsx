@@ -1,7 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import theme from "../js/theme";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -15,7 +16,10 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(
-            <ChakraProvider>
+            <ChakraProvider theme={theme}>
+                <ColorModeScript
+                    initialColorMode={theme.config.initialColorMode}
+                />
                 <App {...props} />
             </ChakraProvider>
         );
