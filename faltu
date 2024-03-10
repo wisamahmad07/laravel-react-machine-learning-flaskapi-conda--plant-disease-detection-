@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react";
+import ApiClient from "../../services/ApiClient";
+
+interface name {
+    name: string;
+}
+interface games {
+    id: number;
+    name: name[];
+}
+const Wisam = () => {
+    const [names, setNames] = useState<name[]>([]);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        ApiClient.get<games>("/games")
+            .then((res) => console.log(res.data.name))
+            .catch((err) => setError(err.message));
+    });
+    return (
+        <>
+            <div>
+                {names.map((name, index) => (
+                    <li key={index}> {name.name}</li>
+                ))}
+            </div>
+        </>
+    );
+};
+
+export default Wisam;
