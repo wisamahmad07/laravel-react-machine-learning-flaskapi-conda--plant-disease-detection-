@@ -1,8 +1,11 @@
+import GenreList from "@/MyComponents/GenreList";
 import GameGrid from "../MyComponents/GameGrid";
 import NavBar from "../MyComponents/NavBar";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
+import useGames from "@/hooks/useGames";
 
 const App = () => {
+    const { gamesState } = useGames();
     return (
         <>
             <Grid
@@ -15,7 +18,11 @@ const App = () => {
                     <NavBar />
                 </GridItem>
                 <Show above="lg">
-                    <GridItem area="sidebar">sidebar</GridItem>
+                    <GridItem area="sidebar">
+                        {gamesState.map((game, index) => (
+                            <GenreList game={game} key={index} />
+                        ))}
+                    </GridItem>
                 </Show>
 
                 <GridItem area="main">

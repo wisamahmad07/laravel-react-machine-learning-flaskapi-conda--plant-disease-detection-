@@ -21,9 +21,9 @@ const GameGrid = () => {
                 padding={10}
             >
                 {isLoading &&
-                    Skeleton.map((s, index) => (
+                    Skeleton.map((skeleton) => (
                         <GameCardComponent>
-                            <GameCardSkeleton key={index} />
+                            <GameCardSkeleton key={skeleton} />
                         </GameCardComponent>
                     ))}
                 {gamesState.map((game) => (
