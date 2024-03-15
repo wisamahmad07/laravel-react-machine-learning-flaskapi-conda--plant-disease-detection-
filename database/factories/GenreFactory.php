@@ -4,8 +4,10 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
-class GameFactory extends Factory
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Genre>
+ */
+class GenreFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,8 +18,7 @@ class GameFactory extends Factory
     {
         return [
             "name" => $this->faker->name(),
-            "image" => $this->faker->imageUrl(2080, 1040),
-            "genre_id" => $this->faker->numberBetween(1, 9),
+            "image" => $this->faker->imageUrl(200, 200)
         ];
     }
 }

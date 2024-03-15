@@ -2,30 +2,59 @@ import { useEffect, useState } from "react";
 import ApiClient from "../../services/ApiClient";
 
 interface name {
-    name: string;
+name: string;
 }
 interface games {
-    id: number;
-    name: name[];
+id: number;
+name: name[];
 }
 const Wisam = () => {
-    const [names, setNames] = useState<name[]>([]);
+const [names, setNames] = useState<name[]>([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        ApiClient.get<games>("/games")
-            .then((res) => console.log(res.data.name))
-            .catch((err) => setError(err.message));
-    });
-    return (
+    ApiClient.get<games>("/games")
+        .then((res) => console.log(res.data.name))
+        .catch((err) => setError(err.message));
+        });
+        return (
         <>
             <div>
                 {names.map((name, index) => (
-                    <li key={index}> {name.name}</li>
+                <li key={index}> {name.name}</li>
                 ))}
             </div>
         </>
-    );
-};
+        );
+        };
 
-export default Wisam;
+        export default Wisam;
+
+
+        $table->string('Indie');
+        $table->string('Adventure');
+        $table->string('RPG');
+        $table->string('Strategy');
+        $table->string('Shooter');
+        $table->string('Casual');
+        $table->string('Simulation');
+        $table->string('Puzzle');
+        $table->string('Arcade');
+        $table->string('Platformer');
+        $table->string('Racing');
+        $table->string('Massively Multiplayer');
+        $table->string('Sports');
+        $table->string('Fighting');
+        $table->string('Family');
+        $table->string('Board Games');
+
+
+        $table->string('pc');
+        $table->string('playstation');
+        $table->string('xbox');
+        $table->string('nintendo');
+        $table->string('mac');
+        $table->string('linux');
+        $table->string('android');
+        $table->string('ios');
+        $table->string('web');

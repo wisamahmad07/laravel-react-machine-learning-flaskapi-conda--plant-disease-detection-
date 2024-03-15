@@ -12,7 +12,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        return response()->json(['games' => Game::get(), 200]);
+        $games = Game::with('platform', 'genre')->get(); // Assuming you have defined relationships in your Game model
+        return response()->json($games);
     }
 
     /**
