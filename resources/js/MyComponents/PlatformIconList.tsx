@@ -30,17 +30,27 @@ const PlatformIconList = ({ platform }: Props) => {
         web: BsGlobe,
     };
 
+    const DefaultIcons = [FaAndroid, FaWindows];
     return (
         <HStack marginY={1}>
-            {platform.map((platform, index) => (
-                <Text fontSize={10} key={index}>
-                    <Icon
-                        as={IconMap[platform.name]}
-                        fontSize="16px"
-                        color="gray.400"
-                    />
-                </Text>
-            ))}
+            {platform.length > 0
+                ? platform.map((platform, index) => (
+                      <Text fontSize={10} key={index}>
+                          <Icon
+                              as={IconMap[platform.name]}
+                              fontSize="16px"
+                              color="gray.400"
+                          />
+                      </Text>
+                  ))
+                : DefaultIcons.map((icon, index) => (
+                      <Icon
+                          key={index}
+                          as={icon}
+                          fontSize="16px"
+                          color="gray.400"
+                      />
+                  ))}
         </HStack>
     );
 };

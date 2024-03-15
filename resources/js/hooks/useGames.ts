@@ -17,6 +17,7 @@ export interface Game {
     image: string;
     platform: Platform[];
     genre: Genre;
+    genre_id: number;
 }
 
 const useGames = () => {
