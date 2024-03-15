@@ -29,7 +29,6 @@ const PlatformIconList = ({ platform }: Props) => {
         ios: MdPhoneIphone,
         web: BsGlobe,
     };
-
     const DefaultIcons = [FaAndroid, FaWindows];
     return (
         <HStack marginY={1}>
