@@ -14,7 +14,7 @@
         "@types/react-dom": "^18.0.10",
         "@vitejs/plugin-react": "^4.2.0",
         "autoprefixer": "^10.4.12",
-        "axios": "^1.6.7",
+        "axios": "^1.6.8",
         "laravel-vite-plugin": "^1.0.0",
         "postcss": "^8.4.31",
         "react": "^18.2.0",
@@ -26,8 +26,13 @@
     "dependencies": {
         "@chakra-ui/react": "^2.8.2",
         "@emotion/react": "^11.11.4",
-        "@emotion/styled": "^11.11.0",
-        "framer-motion": "^11.0.8",
-        "react-icons": "^4.12.0"
+        "@emotion/styled": "^11.11.5",
+        "@fortawesome/free-solid-svg-icons": "^6.5.2",
+        "@inertiajs/inertia-react": "^0.8.1",
+        "@tanstack/react-query": "^5.36.2",
+        "framer-motion": "^11.2.3",
+        "react-icons": "^4.12.0",
+        "react-query": "^3.39.3",
+        "react-router-dom": "^6.23.1"
     }
 }

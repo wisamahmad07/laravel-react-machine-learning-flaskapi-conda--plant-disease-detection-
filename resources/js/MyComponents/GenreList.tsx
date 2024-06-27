@@ -1,16 +1,24 @@
-import { Game } from "@/hooks/useGames";
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-interface Props {
-    game: Game;
+
+const GenreList = () => {
+  return (
+    <HStack>
+      
+          <Link to="/" className="link">Home</Link>
+       
+          <Link to="/information" className="link">Information</Link>
+        
+          <Link to="/prediction" className="link">Prediction</Link>
+        
+      </HStack>
+  )
 }
 
-const GenreList = ({ game }: Props) => {
-    return (
-        <HStack>
-            <Text>{game.genre.name}</Text>
-        </HStack>
-    );
-};
-
 export default GenreList;
+
+
+// nothing
+
+
